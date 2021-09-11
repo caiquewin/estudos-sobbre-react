@@ -1,34 +1,32 @@
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Form from './components/Form/Form'
-import React, {Fragment} from 'react'
+ import React, {Fragment} from 'react'
 
-const Teste = () => {
+// const Titulo =  (props) => { // jeito sem desestruturar
 
-  const carregando = true
-  if (carregando) {
-    return (
-      <Fragment>
-      <p>carregando</p>
-      </Fragment>)
-  } else {
-    return(
-      <>
-      <p>não foi possivel carregar</p>
-      </>
-    )
-  }
+//   return(
+//     <>
+//     <h1 style={{color:`${props.corLetera}`}}>{props.texto}</h1>
+//     </>
+//   )
+// }
+
+const Titulo =  ({corLetera,texto}) => { // desistruturando
+
+  return(
+    <>
+    <h1 style={{color:`${corLetera}`}}>{texto}</h1>
+    </>
+  )
 }
 
 
 function App() {
   return (
-    <React.Fragment>
-     <Teste/>
-      <Header />
-      <Form />
-      <Footer />
-    </React.Fragment>
+    <>
+  <Titulo corLetera="red" texto="Olá prezado0"/>
+  <Titulo corLetera="blue" texto="Olá prezado1"/>
+  <Titulo corLetera="pink" texto="Olá prezado2"/>
+
+    </>
   );
 }
 
