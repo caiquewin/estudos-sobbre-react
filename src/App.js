@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Form from './components/Form/Form'
+import React, {Fragment} from 'react'
+
+const Teste = () => {
+
+  const carregando = true
+  if (carregando) {
+    return (
+      <Fragment>
+      <p>carregando</p>
+      </Fragment>)
+  } else {
+    return(
+      <>
+      <p>não foi possivel carregar</p>
+      </>
+    )
+  }
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+     <Teste/>
+      <Header />
+      <Form />
+      <Footer />
+    </React.Fragment>
   );
 }
 
