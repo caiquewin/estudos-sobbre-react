@@ -1,14 +1,11 @@
 import React from 'react'
 
 function App() {
-  let ativo = true
-  function handleClick() {
-    ativo = !ativo
-    console.log("ativo:",ativo)
-  }
+  const [ativo ,setAtivo] = React.useState()
+
   return (
     <>
-      <button onClick={handleClick}>{ativo ? "ativo" : "desativo"}</button>
+      <button onClick={()=>  setAtivo(!ativo)}>{ativo ? "ativo" : "desativo"}</button>
     </>
   );
 }
