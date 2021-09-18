@@ -1,10 +1,14 @@
- import React from 'react'  
-import HomeIndex from './components/Home/HomeIndex';
+import React from 'react'
 
 function App() {
+  let ativo = true
+  function handleClick() {
+    ativo = !ativo
+    console.log("ativo:",ativo)
+  }
   return (
-    <>  
-<HomeIndex/>
+    <>
+      <button onClick={handleClick}>{ativo ? "ativo" : "desativo"}</button>
     </>
   );
 }
