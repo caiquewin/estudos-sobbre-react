@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
-import Modal from './components/Modal'
-import ButtonModal from './components/ButtonModal' 
-
+import React, { useState } from 'react' 
 function App() {
-  const [ativo, setAtivo] = useState(false) 
+
+  const [contador, setContado] = useState(1)  
+  const [items ,setItems]=useState(['item1'])
+
+  function handleClick() {
+ setContado((contador)=>{
+
+   
+   return contador +1
+  })
+  setItems(()=>[...items,`items${contador+1}`])
+  }
+ 
+console.log('verificando array',items)
   return (
-    <>
-    {/* aqui estou compartilhando o meu hook entre os componentes abixo  */}
-    {/* compartilhando tbm as funções */}
-    <Modal ativo={ativo } setAtivo={setAtivo}/> 
-    <ButtonModal setAtivo={setAtivo}/>
+    <> 
+    {items.map(e=>  <li key={e}>{e}</li>)}
+    <button onClick={()=>handleClick()}>{contador}</button>
     </>
   );
 }
