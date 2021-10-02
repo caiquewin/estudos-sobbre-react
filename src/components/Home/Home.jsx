@@ -29,13 +29,14 @@ function Home() {
       } else if (data.data) {
         let response = data.data
         console.log(data.data);
+        let preco = parseInt(response.preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
         return (
           <div>
             {response.nome}
-            <li>Descrição: {response.descricao}</li>
+            <li>Descrição: {response.descricao}'</li>
             {response.nome}
             <div>
-              Preço {response.preco}
+              Preço {preco}
             </div>
           </div>
         )
