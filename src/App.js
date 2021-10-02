@@ -1,24 +1,23 @@
-import React, { useState } from 'react' 
+import React, { useState } from 'react'
+import Home from './components/Home/Home'
 function App() {
 
-  const [contador, setContado] = useState(1)  
-  const [items ,setItems]=useState(['item1'])
+  const [contador, setContado] = useState(1)
+  const [items, setItems] = useState(['item1'])
 
   function handleClick() {
- setContado((contador)=>{
+    setContado((contador) => {
 
-   
-   return contador +1
-  })
-  setItems(()=>[...items,`items${contador+1}`])
+
+      return contador + 1
+    })
+    setItems(() => [...items, `items${contador + 1}`])
   }
  
-console.log('verificando array',items)
   return (
-    <> 
-    {items.map(e=>  <li key={e}>{e}</li>)}
-    <button onClick={()=>handleClick()}>{contador}</button>
-    </>
+    <>
+    <Home/> 
+    </> 
   );
 }
 
